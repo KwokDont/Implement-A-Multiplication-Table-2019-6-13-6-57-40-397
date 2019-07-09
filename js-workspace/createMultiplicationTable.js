@@ -1,17 +1,12 @@
-const isValidNum = require('./isValidNum');
-
 function createMultiplicationTable(startNumber,endNumber) {
     var result = '';
-    if (isValidNum(startNumber,endNumber)) {
-        for (let i = startNumber; i < endNumber+1; i++) {
-            for (let j = startNumber; j <= i; j++) {
-                result += j+'*'+i+"="+i*j+"\t";
-            }
-            result+="\n";
+    for (let i = startNumber; i < endNumber+1; i++) {
+        for (let j = startNumber; j <= i; j++) {
+            result += j+'*'+i+"="+i*j+"\t";
         }
-        return result;
+        result+="\n";
     }
-    return null;
+    return result;
 }
 
 module.exports = createMultiplicationTable;
